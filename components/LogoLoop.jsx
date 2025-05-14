@@ -1,6 +1,6 @@
 const logos = [
-  'html.png', 'css.png', 'nextjs.png', 'react.png',
-  'js.png', 'node.png', 'figma.png', 'autocad.png',
+  'html.png', 'css.png', 'nextjs.png', 'react2.png',
+  'js.png', 'nodejs.png', 'figma.png', 'autocad.png',
   'autodesk.png', 'wordpress.png', 'github.png', 'vite.png','tailwind.png','vscode.png'
 ]
 
