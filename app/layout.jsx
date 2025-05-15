@@ -1,4 +1,5 @@
-import './globals.css'; // ✅ Ikke ../styles!
+// app/layout.jsx
+import './globals.css';
 
 export const metadata = {
   title: 'Sondre Akerholt | Portfolio',
@@ -8,7 +9,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="font-sans bg-white text-black">{children}</body>
     </html>
   );
 }
