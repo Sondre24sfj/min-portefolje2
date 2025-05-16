@@ -1,15 +1,15 @@
-// app/layout.jsx
 import './globals.css';
 
 export const metadata = {
-  title: 'Sondre Akerholt | Portfolio',
-  description: 'Junior Frontend Developer',
+  title: 'DevPortfolio',
 };
 
-export default function RootLayout({ children }) {
+export default function Layout({ children }) {
   return (
     <html lang="en">
-      <body className="font-sans bg-white text-black">{children}</body>
+      <body className="bg-primary text-white">
+        {children}
+      </body>
     </html>
   );
 }
