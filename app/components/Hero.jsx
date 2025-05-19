@@ -26,7 +26,7 @@ export default function Hero() {
             Junior Frontend Developer
           </h2>
           <p className="text-white text-md">
-            I build beautiful, responsive websites with modern technologies.
+            I build beautiful, responsive websites with modern technologies and UX design.
             <br />
             Passionate about creating seamless user experiences and clean code.
           </p>
