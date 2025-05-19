@@ -1,8 +1,128 @@
-@import "tailwindcss/preflight";
-@import "tailwindcss/utilities";
-@import "tailwindcss/utilities";
+@import "tailwindcss";
 
+/* Globale farger og bakgrunn */
+:root {
+  --primary: #030344;
+  --yellow: #F7DE00;
+  --white: #ffffff;
+}
 
+/* Body og heading-stil */
 body {
   font-family: 'Arial', sans-serif;
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: var(--yellow); /* Gul farge for overskrifter */
+}
+
+.section-title {
+  color: var(--yellow);
+  font-weight: bold;
+  text-align: center;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.text-yellow {
+  color: var(--yellow);
+}
+
+.bg-primary {
+  background-color: var(--primary);
+}
+
+.bg-yellow {
+  background-color: var(--yellow);
+}
+
+.tech-icons img {
+  height: 2.5rem;
+  width: 2.5rem;
+  object-fit: contain;
+  margin: 0.5rem;
+  filter: none;
+}
+
+.container {
+  max-width: 768px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
+}
+
+/* Header stil */
+.header {
+  background-color: var(--primary);
+  color: var(--yellow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: relative;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.nav-desktop {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-desktop a {
+  color: var(--white);
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.hamburger {
+  display: none;
+  font-size: 1.5rem;
+  color: var(--white);
+  cursor: pointer;
+}
+
+.nav-mobile {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: var(--primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  z-index: 999;
+}
+
+.moon-icon {
+  color: var(--white);
+  margin-left: 1rem;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--primary);
+  color: var(--white);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.8rem;
+  margin-top: 3rem;
+}
+
+/* Media Query */
+@media (max-width: 768px) {
+  .nav-desktop {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
 }

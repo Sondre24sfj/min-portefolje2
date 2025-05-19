@@ -1,74 +1,53 @@
-import Header from './components/Header';
-import Footer from './components/Footer';
+import Hero from './components/Hero';
 import ProjectCard from './components/ProjectCard';
+import LogoLoop from './components/LogoLoop';
 
-export default function HomePage() {
+export default function Home() {
   return (
-    <div className="max-w-4xl mx-auto text-white">
-      <Header />
+    <div className="bg-primary text-white font-sans">
+      <div>
+        {/* HERO */}
+        <Hero />
 
-      {/* Profile Section */}
-      <section className="text-yellow text-center pt-10">
-        <h2 className="text-sm uppercase mb-2">Profile</h2>
-        <h1 className="text-3xl font-bold text-white">
-          Hi, I'm <span className="text-yellow">Sondre Akerholt</span>
-        </h1>
-        <h3 className="text-yellow text-md font-medium mt-2">Junior Frontend Developer</h3>
-        <p className="text-white text-sm mt-4 px-4">
-          I build beautiful, responsive websites with modern technologies.
-          Passionate about creating seamless user experiences and clean code.
-        </p>
-      </section>
+        {/* ABOUT ME */}
+        <section className="text-center px-4 py-12 max-w-3xl mx-auto">
+          <h2 className="text-yellow text-xl font-semibold mb-4">About me</h2>
+          <p className="mb-4">
+            I am 34 years old, from Hof, and currently living there. In my free time, I enjoy climbing, hunting, outdoor activities, spending time with friends and family.
+          </p>
+          <p className="mb-4">
+            I have completed a course through Jobloop/Kodehodet consisting of 8 months of theory and will now begin 4 months of practical training in a company.
+          </p>
+          <p>
+            During the course, I have worked with: HTML, CSS, JavaScript, Node, React, Next.js, Tailwind, Figma, GitHub, PostCSS, and Visual Studio Code. In addition, I have previous experience with AutoCAD, Autodesk, and WordPress.
+          </p>
+        </section>
 
-      {/* About Section */}
-      <section id="about" className="text-center py-12">
-        <h2 className="text-yellow font-bold mb-4">About me</h2>
-        <p className="text-white text-sm px-4">
-          I am 26 years old, from Hof, and currently doing third year at Noroff. I enjoy clothing, nature, video editing, gaming, music and family/friends.
-        </p>
-        <p className="text-white text-sm mt-4 px-4">
-          I have completed an internship at Kodehode/Smart Media Digital – result of Ready for Job course. I look forward to get a job in frontend.
-        </p>
-        <p className="text-white text-sm mt-4 px-4">
-          By time I’ve learned the stack with: HTML, CSS, JavaScript, React, NextJs, Tailwind. I also practice design systems with AutoCAD, Autodesk, and WordPress.
-        </p>
-      </section>
+        {/* SKILLS (kun logo-loop nå) */}
+        <LogoLoop />
 
-      {/* Skills Section */}
-      <section id="skills" className="bg-[#020234] py-10 text-center">
-        <h2 className="text-yellow font-bold mb-6">Skills & Technologies</h2>
-        <div className="flex justify-center flex-wrap gap-6 mb-4">
-          {[
-            'js', 'css', 'html', 'nextjs', 'react', 'tailwind',
-            'github2', 'figma', 'autocad', 'wordpress'
-          ].map(name => (
-            <img key={name} src={`/logos/${name}.png`} alt={name} className="h-10 w-auto" />
-          ))}
-        </div>
-        <p className="text-white text-sm px-4 max-w-2xl mx-auto">
-          I have experience with a variety of technologies and tools, specializing in frontend development with React and Next.js.
-          My skills also include design with Figma and technical drawing with AutoCAD and Autodesk products.
-        </p>
-      </section>
-
-      {/* Projects Section */}
-      <section id="projects" className="bg-yellow text-primary py-10 text-center">
-        <h2 className="font-bold mb-6">Recent Projects</h2>
-        <div className="flex flex-col md:flex-row justify-center items-center gap-6 px-4">
-          <ProjectCard
-            title="WIKE&Co"
-            image="/logos/wike.png"
-            link="https://wike.vercel.app"
-          />
-          <ProjectCard
-            title="GitHub"
-            image="/logos/github2.png"
-            link="https://github.com/SondreAkerholt"
-          />
-        </div>
-      </section>
-
-      <Footer />
+        {/* PROJECTS */}
+        <section className="bg-yellow text-primary py-16">
+          <h2 className="text-center text-xl font-bold mb-10">Recent Projects</h2>
+          <div className="flex flex-col md:flex-row justify-center items-center gap-10 px-4">
+            <ProjectCard
+              title="Project"
+              description="Created a website for a machine contracting company."
+              link="https://wikeco.no/"
+              image="/logos/wike.png"
+              logo="/logos/wike.svg"
+            />
+            <ProjectCard
+              title="GitHub"
+              description="https://github.com/Sondre24sfj"
+              link="https://github.com/Sondre24sfj"
+              image="/logos/github2.png"
+              logo="/logos/github2.svg"
+            />
+          </div>
+        </section>
+      </div>
     </div>
   );
 }
+
