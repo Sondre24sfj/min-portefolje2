@@ -1,53 +1,29 @@
 @import "tailwindcss";
 
-/* Globale farger og bakgrunn */
-:root {
-  --primary: #030344;
-  --yellow: #F7DE00;
-  --white: #ffffff;
-}
-
 body {
   font-family: 'Arial', sans-serif;
-  background-color: var(--primary);
-  color: var(--white);
+  background-color: #030344;
+  color: white;
+  font-size: 1.125rem; /* Større tekst */
+  line-height: 1.6;
 }
 
-/* Heading */
 h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
-  color: var(--yellow);
-}
-
-/* Seksjonstitler */
-.section-title {
-  color: var(--yellow);
-  font-weight: bold;
-  text-align: center;
-  margin-top: 3rem;
-  margin-bottom: 1.5rem;
 }
 
 .text-yellow {
-  color: var(--yellow);
+  color: #F7DE00;
 }
 
 .bg-primary {
-  background-color: var(--primary);
+  background-color: #030344;
 }
 
 .bg-yellow {
-  background-color: var(--yellow);
+  background-color: #F7DE00;
 }
 
-.container {
-  max-width: 768px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 1rem;
-}
-
-/* Teknologiikoner */
 .tech-icons img {
   height: 2.5rem;
   width: 2.5rem;
@@ -56,20 +32,27 @@ h1, h2, h3, h4, h5, h6 {
   filter: none;
 }
 
-/* Header */
+.container {
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
+}
+
+/* Header med gul stripe */
 .header {
-  background-color: var(--primary);
-  color: var(--yellow);
+  background-color: #030344;
+  border-top: 6px solid #F7DE00;
+  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  position: relative;
 }
 
 .logo {
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+  color: #F7DE00;
 }
 
 .nav-desktop {
@@ -78,15 +61,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-desktop a {
-  color: var(--white);
+  color: white;
   font-weight: 500;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 .hamburger {
   display: none;
   font-size: 1.5rem;
-  color: var(--white);
+  color: white;
   cursor: pointer;
 }
 
@@ -95,7 +78,7 @@ h1, h2, h3, h4, h5, h6 {
   top: 100%;
   left: 0;
   right: 0;
-  background-color: var(--primary);
+  background-color: #030344;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -105,56 +88,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .moon-icon {
-  color: var(--white);
+  color: white;
   margin-left: 1rem;
 }
 
-/* Footer */
 .footer {
-  background-color: var(--primary);
-  color: var(--white);
+  background-color: #030344;
+  color: white;
   text-align: center;
   padding: 1rem;
   font-size: 0.8rem;
-  margin-top: 3rem;
+  margin-top: auto;
 }
 
-/* Project cards */
-.project-card {
-  background-color: var(--primary);
-  padding: 1.5rem;
-  border-radius: 1rem;
-  width: 280px;
-  text-align: center;
-  color: var(--white);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-}
-
-.project-logo {
-  height: 80px;
-  object-fit: contain;
-  margin-bottom: 1rem;
-}
-
-.project-title {
-  color: var(--yellow);
-  font-weight: bold;
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-}
-
-.project-description {
-  font-size: 0.9rem;
-  margin-bottom: 1rem;
-}
-
-.project-link {
-  color: red;
-  font-weight: 500;
-  text-decoration: underline;
-}
-
-/* Media Query */
 @media (max-width: 768px) {
   .nav-desktop {
     display: none;
