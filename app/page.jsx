@@ -2,6 +2,7 @@
 import Hero from './components/Hero';
 import ProjectCard from './components/ProjectCard';
 import LogoLoop from './components/LogoLoop';
+import ContactForm from './components/ContactForm';
 
 export default function Home() {
   return (
@@ -59,6 +60,8 @@ export default function Home() {
           />
         </div>
       </section>
+      <ContactForm />
     </div>
+    
   );
 }

@@ -1,27 +1,53 @@
 @import "tailwindcss";
 
+:root {
+  --primary: #030344;
+  --yellow: #F7DE00;
+  --white: #ffffff;
+  --contact-bg: #1F2567;
+}
+
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #030344;
-  color: white;
-  font-size: 1.125rem; /* Større tekst */
-  line-height: 1.6;
+  background-color: var(--primary);
+  color: var(--white);
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
+  color: var(--yellow); /* Gul farge for overskrifter */
+}
+
+.section-title {
+  color: var(--yellow);
+  font-weight: bold;
+  text-align: center;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
 }
 
 .text-yellow {
-  color: #F7DE00;
+  color: var(--yellow);
 }
 
 .bg-primary {
-  background-color: #030344;
+  background-color: var(--primary);
 }
 
 .bg-yellow {
-  background-color: #F7DE00;
+  background-color: var(--yellow);
+}
+
+.bg-contact {
+  background-color: var(--contact-bg);
+}
+
+.border-yellow {
+  border-color: var(--yellow);
+}
+
+.placeholder-yellow::placeholder {
+  color: var(--yellow);
 }
 
 .tech-icons img {
@@ -33,26 +59,27 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .container {
-  max-width: 1024px;
+  max-width: 768px;
   margin-left: auto;
   margin-right: auto;
   padding: 1rem;
 }
 
-/* Header med gul stripe */
+/* Header stil */
 .header {
-  background-color: #030344;
-  border-top: 6px solid #F7DE00;
-  padding: 1rem 2rem;
+  background-color: var(--primary);
+  color: var(--yellow);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 1rem 2rem;
+  position: relative;
+  border-top: 6px solid var(--yellow); /* GUL KANT ØVERST */
 }
 
 .logo {
   font-weight: bold;
-  font-size: 1.5rem;
-  color: #F7DE00;
+  font-size: 1.2rem;
 }
 
 .nav-desktop {
@@ -61,15 +88,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-desktop a {
-  color: white;
+  color: var(--white);
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
 .hamburger {
   display: none;
   font-size: 1.5rem;
-  color: white;
+  color: var(--white);
   cursor: pointer;
 }
 
@@ -78,7 +105,7 @@ h1, h2, h3, h4, h5, h6 {
   top: 100%;
   left: 0;
   right: 0;
-  background-color: #030344;
+  background-color: var(--primary);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -88,23 +115,63 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .moon-icon {
-  color: white;
+  color: var(--white);
   margin-left: 1rem;
 }
 
+/* Footer */
 .footer {
-  background-color: #030344;
-  color: white;
+  background-color: var(--primary);
+  color: var(--white);
   text-align: center;
   padding: 1rem;
   font-size: 0.8rem;
-  margin-top: auto;
+  margin-top: 3rem;
 }
 
+/* Contact form input styling */
+input,
+textarea {
+  background-color: transparent;
+  border: 1px solid var(--yellow);
+  color: var(--yellow);
+  padding: 0.75rem;
+  border-radius: 0.375rem;
+  font-size: 1rem;
+}
+
+textarea {
+  resize: none;
+  height: 8rem;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--yellow);
+}
+
+/* Submit button */
+button[type="submit"] {
+  background-color: var(--yellow);
+  color: var(--contact-bg);
+  font-weight: bold;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--white);
+  color: var(--contact-bg);
+}
+
+/* Media Query */
 @media (max-width: 768px) {
   .nav-desktop {
     display: none;
   }
+
   .hamburger {
     display: block;
   }
