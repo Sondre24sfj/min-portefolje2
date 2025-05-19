@@ -1,14 +1,19 @@
 import './globals.css';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 export const metadata = {
-  title: 'DevPortfolio',
+  title: 'DevPortofolio',
+  description: 'Portfolio av Sondre Akerholt',
 };
 
-export default function Layout({ children }) {
+export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="bg-primary text-white">
+      <body>
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

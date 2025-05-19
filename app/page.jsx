@@ -14,7 +14,7 @@ export default function Home() {
       <section className="text-center max-w-3xl mx-auto py-12 px-4">
         <h2 className="text-yellow text-xl font-semibold mb-4">About me</h2>
         <p className="mb-4">
-          I am 34 years old, from Hof, and currently living there. In my free time, I enjoy climbing,
+          I am 33 years old, from Hof, and currently living there. In my free time, I enjoy climbing,
           hunting, outdoor activities, spending time with friends and family.
         </p>
         <p className="mb-4">
@@ -44,7 +44,7 @@ export default function Home() {
         <h2 className="bg-[#1F2567] text-lg font-bold mb-10">Recent Projects</h2>
         <div className="flex flex-col md:flex-row justify-center items-start gap-10 px-4">
           <ProjectCard
-            title="Project"
+            title="Wike & Co"
             description="Created a website for a machine contracting company."
             link="https://wikeco.no/"
             image="/logos/wike.png"
