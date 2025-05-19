@@ -15,8 +15,8 @@ export default function Home() {
       <section className="text-center max-w-3xl mx-auto py-12 px-4">
         <h2 className="text-yellow text-xl font-semibold mb-4">About me</h2>
         <p className="mb-4">
-          I am 33 years old, from Hof, and currently living there. In my free time, I enjoy climbing,
-          hunting, outdoor activities, spending time with friends and family.
+          I am 33 years old, from Hof, and currently living there. In my free time, I enjoy climbing, watch sports, 
+          outdoor activities, spending time with friends and family.
         </p>
         <p className="mb-4">
           I have completed a course through Jobloop/Kodehodet consisting of 8 months of theory
