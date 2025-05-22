@@ -1,42 +1,74 @@
-// app/components/ContactForm.jsx
+'use client';
+import { useState } from 'react';
+
 export default function ContactForm() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
+
+  const handleChange = e => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    console.log('Submitted:', formData);
+    // Du kan legge til epost-integrasjon eller API-kall her.
+  };
+
   return (
-    <section className="bg-contact text-yellow py-16 px-6">
-      <div className="max-w-xl mx-auto text-center">
-        <h2 className="text-2xl md:text-3xl font-bold mb-6">Contact Me</h2>
-        <form
-          action="https://formsubmit.co/sondre24sfj@gmail.com"
-          method="POST"
-          className="flex flex-col gap-4"
-        >
-          <input
-            type="text"
-            name="name"
-            required
-            placeholder="Your name"
-            className="bg-transparent border border-yellow rounded px-4 py-2 text-yellow placeholder-yellow"
-          />
-          <input
-            type="email"
-            name="email"
-            required
-            placeholder="Your email"
-            className="bg-transparent border border-yellow rounded px-4 py-2 text-yellow placeholder-yellow"
-          />
-          <textarea
-            name="message"
-            required
-            placeholder="Your message"
-            className="bg-transparent border border-yellow rounded px-4 py-2 h-32 resize-none text-yellow placeholder-yellow"
-          ></textarea>
-          <button
-            type="submit"
-            className="bg-yellow text-[#1F2567] font-bold px-6 py-2 rounded hover:bg-white hover:text-[#1F2567] transition"
-          >
-            Send Message
-          </button>
-        </form>
+    <form onSubmit={handleSubmit} className="max-w-xl mx-auto space-y-6">
+      <div>
+        <label htmlFor="name" className="block font-semibold mb-1">Name</label>
+        <input
+          id="name"
+          name="name"
+          type="text"
+          placeholder="Your name"
+          value={formData.name}
+          onChange={handleChange}
+          className="w-full px-4 py-2 border rounded-md bg-white text-black"
+        />
       </div>
-    </section>
+
+      <div>
+        <label htmlFor="email" className="block font-semibold mb-1">Email</label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          placeholder="Your email"
+          value={formData.email}
+          onChange={handleChange}
+          className="w-full px-4 py-2 border rounded-md bg-white text-black"
+        />
+      </div>
+
+      <div>
+        <label htmlFor="message" className="block font-semibold mb-1">Message</label>
+        <textarea
+          id="message"
+          name="message"
+          placeholder="Your message"
+          value={formData.message}
+          onChange={handleChange}
+          className="w-full px-4 py-2 border rounded-md bg-white text-black"
+          rows={5}
+        ></textarea>
+      </div>
+
+      <button
+        type="submit"
+        className="bg-blue-600 text-white font-semibold px-6 py-2 rounded-md hover:bg-blue-700 transition-all"
+      >
+        Send Message
+      </button>
+    </form>
   );
 }
