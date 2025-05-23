@@ -1,33 +1,6 @@
 'use client';
 
-import { useState } from 'react';
-
 export default function ContactForm() {
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const form = e.target;
-    const data = {
-      name: form.name.value,
-      email: form.email.value,
-      message: form.message.value,
-    };
-
-    const response = await fetch('https://formspree.io/f/mblbzkyd', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data),
-    });
-
-    if (response.ok) {
-      setSubmitted(true);
-      form.reset();
-    } else {
-      alert('Noe gikk galt med innsendingen.');
-    }
-  };
-
   return (
     <section id="contact" className="bg-black text-white px-6 py-12">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-10 items-start">
@@ -47,7 +20,8 @@ export default function ContactForm() {
 
         {/* Skjema */}
         <form
-          onSubmit={handleSubmit}
+          action="https://formspree.io/f/mldbkzyd"
+          method="POST"
           className="flex-1 bg-[#0a0a0a] p-6 rounded-md shadow-md space-y-6"
         >
           {/* Navn */}
@@ -61,8 +35,7 @@ export default function ContactForm() {
               type="text"
               required
               placeholder="Skriv inn navnet ditt"
-              className="w-full bg-[#1a1a1a] text-white border border-gray-700 rounded px-4 py-2"
-              style={{ '::placeholder': { color: 'white' }, color: 'white' }}
+              className="w-full bg-[#1a1a1a] text-white placeholder-white border border-gray-700 rounded px-4 py-2"
             />
           </div>
 
@@ -77,8 +50,7 @@ export default function ContactForm() {
               type="email"
               required
               placeholder="din@email.com"
-              className="w-full bg-[#1a1a1a] text-white border border-gray-700 rounded px-4 py-2"
-              style={{ '::placeholder': { color: 'white' }, color: 'white' }}
+              className="w-full bg-[#1a1a1a] text-white placeholder-white border border-gray-700 rounded px-4 py-2"
             />
           </div>
 
@@ -93,8 +65,7 @@ export default function ContactForm() {
               rows="4"
               required
               placeholder="Fortell oss litt om prosjektet ditt…"
-              className="w-full bg-[#1a1a1a] text-white border border-gray-700 rounded px-4 py-2 resize-none"
-              style={{ '::placeholder': { color: 'white' }, color: 'white' }}
+              className="w-full bg-[#1a1a1a] text-white placeholder-white border border-gray-700 rounded px-4 py-2 resize-none"
             />
           </div>
 
