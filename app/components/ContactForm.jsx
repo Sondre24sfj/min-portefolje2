@@ -1,39 +1,45 @@
 'use client';
-
 import { useState } from 'react';
 
 export default function ContactForm() {
-  const [submitted, setSubmitted] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
+
     const form = e.target;
-    const data = {
-      name: form.name.value,
-      email: form.email.value,
-      message: form.message.value,
-    };
+    const data = new FormData(form);
 
-    const response = await fetch('https://formspree.io/f/mblbzkyd', {
+    fetch('https://formspree.io/f/mldbkzyd', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data),
-    });
+      body: data,
+      headers: {
+        Accept: 'application/json',
+      },
+    })
+      .then((response) => {
+        if (response.ok) {
+          setIsSubmitted(true);
+          form.reset();
+        } else {
+          alert('Det oppstod en feil. Prøv igjen.');
+        }
+      })
+      .catch(() => {
+        alert('Det oppstod en nettverksfeil.');
+      });
+  };
 
-    if (response.ok) {
-      setSubmitted(true);
-      form.reset();
-    } else {
-      alert('Noe gikk galt med innsendingen.');
-    }
+  const handleNewMessage = () => {
+    setIsSubmitted(false);
   };
 
   return (
-    <section id="contact" className="bg-black text-white px-6 py-12">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-10 items-start">
-        {/* Venstre tekst */}
+    <section id="contact" className="bg-[#0a0a0a] text-white py-16 px-4">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-start gap-10">
+        {/* Tekst */}
         <div className="flex-1 space-y-6">
-          <h2 className="text-yellow-400 text-4xl md:text-5xl font-bold leading-tight">
+          <h2 className="text-4xl md:text-5xl font-bold leading-tight text-yellow-400">
             Finn ut om vi er en god <br /> match for ditt prosjekt
           </h2>
           <p className="text-lg">
@@ -45,76 +51,96 @@ export default function ContactForm() {
           </p>
         </div>
 
-        {/* Skjema */}
-        <form
-          onSubmit={handleSubmit}
-          className="flex-1 bg-[#0a0a0a] p-6 rounded-md shadow-md space-y-6"
-        >
-          {/* Navn */}
-          <div>
-            <label htmlFor="name" className="block text-sm font-medium mb-1">
-              Navn <span className="text-red-500">*</span>
-            </label>
-            <input
-              id="name"
-              name="name"
-              type="text"
-              required
-              placeholder="Skriv inn navnet ditt"
-              className="w-full bg-[#1a1a1a] text-white border border-gray-700 rounded px-4 py-2"
-              style={{ '::placeholder': { color: 'white' }, color: 'white' }}
-            />
-          </div>
+        {/* Høyre side */}
+        <div className="flex-1 bg-black rounded-md p-6 space-y-4 shadow-lg">
+          {isSubmitted ? (
+            <div className="text-center space-y-4">
+              <h3 className="text-2xl font-bold text-yellow-400">
+                Takk for meldingen!
+              </h3>
+              <p className="text-white">
+                Jeg har mottatt meldingen din og vil svare så snart som mulig.
+              </p>
+              <button
+                onClick={handleNewMessage}
+                className="mt-4 text-sm underline text-blue-400 hover:text-blue-300"
+              >
+                Send en ny melding
+              </button>
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit} className="space-y-4">
+              {/* Navn */}
+              <div>
+                <label className="block text-sm font-medium text-white mb-1">
+                  Navn <span className="text-red-500">*</span>
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  required
+                  className="w-full bg-[#1a1a1a] text-white border border-gray-700 rounded px-4 py-2"
+                  placeholder="Skriv inn navnet ditt"
+                />
+              </div>
 
-          {/* E-post */}
-          <div>
-            <label htmlFor="email" className="block text-sm font-medium mb-1">
-              E-post <span className="text-red-500">*</span>
-            </label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              required
-              placeholder="din@email.com"
-              className="w-full bg-[#1a1a1a] text-white border border-gray-700 rounded px-4 py-2"
-              style={{ '::placeholder': { color: 'white' }, color: 'white' }}
-            />
-          </div>
+              {/* E-post */}
+              <div>
+                <label className="block text-sm font-medium text-white mb-1">
+                  E-post <span className="text-red-500">*</span>
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  className="w-full bg-[#1a1a1a] text-white border border-gray-700 rounded px-4 py-2"
+                  placeholder="din@email.com"
+                />
+              </div>
 
-          {/* Prosjekt */}
-          <div>
-            <label htmlFor="message" className="block text-sm font-medium mb-1">
-              Kort om prosjektet
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              rows="4"
-              required
-              placeholder="Fortell oss litt om prosjektet ditt…"
-              className="w-full bg-[#1a1a1a] text-white border border-gray-700 rounded px-4 py-2 resize-none"
-              style={{ '::placeholder': { color: 'white' }, color: 'white' }}
-            />
-          </div>
+              {/* Telefonnummer */}
+              <div>
+                <label className="block text-sm font-medium text-white mb-1">
+                  Telefonnummer
+                </label>
+                <input
+                  type="tel"
+                  name="phone"
+                  className="w-full bg-[#1a1a1a] text-white border border-gray-700 rounded px-4 py-2"
+                  placeholder="12345678"
+                />
+              </div>
 
-          {/* Info */}
-          <p className="text-xs text-gray-400">
-            Informasjonen behandles i henhold til vår{' '}
-            <a href="#" className="underline text-gray-300">
-              personvernerklæring
-            </a>
-            .
-          </p>
+              {/* Prosjektbeskrivelse */}
+              <div>
+                <label className="block text-sm font-medium text-white mb-1">
+                  Kort om prosjektet
+                </label>
+                <textarea
+                  name="message"
+                  rows="4"
+                  className="w-full bg-[#1a1a1a] text-white border border-gray-700 rounded px-4 py-2 resize-none"
+                  placeholder="Fortell oss litt om prosjektet ditt..."
+                ></textarea>
+              </div>
 
-          {/* Knapp */}
-          <button
-            type="submit"
-            className="bg-yellow-400 hover:bg-yellow-300 text-black font-semibold px-6 py-2 rounded transition"
-          >
-            Send melding
-          </button>
-        </form>
+              <p className="text-xs text-gray-400">
+                Informasjonen behandles i henhold til vår{' '}
+                <a href="#" className="underline text-gray-300">
+                  personvernerklæring
+                </a>
+                .
+              </p>
+
+              <button
+                type="submit"
+                className="bg-yellow-400 hover:bg-yellow-300 text-black font-semibold px-6 py-2 rounded transition"
+              >
+                Send melding
+              </button>
+            </form>
+          )}
+        </div>
       </div>
     </section>
   );
