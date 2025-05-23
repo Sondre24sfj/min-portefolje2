@@ -67,28 +67,23 @@ export default function HomePage() {
         </section>
 
         {/* PROJECTS */}
-<section id="projects" className="text-center px-6 bg-[#030344]/90 py-12">
+<section id="projects" className="text-center px-4 bg-[#030344] py-12">
   <h2 className="section-title text-yellow mb-10">Recent Projects</h2>
-<div className="flex flex-col md:flex-row justify-center items-center gap-10 px-4">
-<ProjectCard
-  /*title="Wike & Co"*/
-  description="Created a website for a machine contracting company."
-  link="https://wikeco.no/"
-  image="/logos/wikecard.png" // VIKTIG
-  logo="/logos/wike.png" // <- eksakt filnavn
-/>
-
-<ProjectCard
-  /*title="GitHub"*/
-  description="https://github.com/Sondre24sfj
-  Project"
-  link="https://github.com/Sondre24sfj"
-  image="/logos/github4.png" // VIKTIG
-  logo="/logos/github4.png" // <- eksakt filnavn
-/>
+  <div className="flex flex-col md:flex-row justify-center items-center gap-8">
+    <ProjectCard
+      title="Wike & Co"
+      description="Created a website for a machine contracting company."
+      link="https://wikeco.no/"
+      logo="/logos/wike.png"
+    />
+    <ProjectCard
+      title="GitHub"
+      description="My projects on Github from the course I've taken."
+      link="https://github.com/Sondre24sfj"
+      logo="/logos/github4.png"
+    />
   </div>
 </section>
-
         {/* CONTACT */}
         <section
           id="contact"

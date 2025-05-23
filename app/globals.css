@@ -58,7 +58,7 @@ textarea {
   resize: none;
   height: 8rem;
 }
-
+/*Kontakt-skjema*/
 input::placeholder, textarea::placeholder {
   color: white(--contact-bg);
 }
@@ -75,9 +75,34 @@ button[type="submit"] {
 button[type="submit"]:hover {
   background-color: #000;
 }
-
-/*Project-card*/
+  
+/* Project card hover */
 .project-card:hover {
   transform: scale(1.05);
   transition: transform 0.3s ease;
+}
+
+/* Mobiltilpasning */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .project-card {
+    margin-bottom: 2rem;
+    width: 90%;
+  }
+
+  header {
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+  }
+
+  .hamburger-menu {
+    display: block !important;
+  }
+
+  .nav-links {
+    display: none;
+  }
 }
