@@ -1,74 +1,71 @@
-'use client';
-import { useState } from 'react';
-
 export default function ContactForm() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
-
-  const handleChange = e => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = e => {
-    e.preventDefault();
-    console.log('Submitted:', formData);
-    // Du kan legge til epost-integrasjon eller API-kall her.
-  };
-
   return (
-    <form onSubmit={handleSubmit} className="max-w-xl mx-auto space-y-6">
-      <div>
-        <label htmlFor="name" className="block font-semibold mb-1">Name</label>
-        <input
-          id="name"
-          name="name"
-          type="text"
-          placeholder="Your name"
-          value={formData.name}
-          onChange={handleChange}
-          className="w-full px-4 py-2 border rounded-md bg-white text-black"
-        />
-      </div>
+    <section id="contact" className="bg-[#0a0a0a] text-white py-16 px-4">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-start gap-10">
+        {/* Venstre tekst */}
+        <div className="flex-1 space-y-6">
+          <h2 className="text-4xl md:text-5xl font-bold leading-tight">
+            Finn ut om vi er en god <br /> match for ditt prosjekt
+          </h2>
+          <p className="text-lg">
+            Har du et spennende prosjekt du har lyst til å sparke i gang?
+          </p>
+          <p className="text-lg">
+            Kontakt oss på mail til{" "}
+            <span className="font-bold text-white">sondre24sfj@gmail.com</span>
+          </p>
+        </div>
 
-      <div>
-        <label htmlFor="email" className="block font-semibold mb-1">Email</label>
-        <input
-          id="email"
-          name="email"
-          type="email"
-          placeholder="Your email"
-          value={formData.email}
-          onChange={handleChange}
-          className="w-full px-4 py-2 border rounded-md bg-white text-black"
-        />
-      </div>
+        {/* Skjema */}
+        <form className="flex-1 bg-black rounded-md p-6 space-y-4 shadow-lg">
+          <div>
+            <label className="block text-sm font-medium text-white mb-1">
+              Navn <span className="text-red-500">*</span>
+            </label>
+            <input
+              type="text"
+              required
+              className="w-full bg-[#1a1a1a] text-white border border-gray-700 rounded px-4 py-2"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-white mb-1">
+              E-post <span className="text-red-500">*</span>
+            </label>
+            <input
+              type="email"
+              required
+              className="w-full bg-[#1a1a1a] text-white border border-gray-700 rounded px-4 py-2"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-white mb-1">
+              Telefonnummer <span className="text-red-500">*</span>
+            </label>
+            <input
+              type="tel"
+              required
+              className="w-full bg-[#1a1a1a] text-white border border-gray-700 rounded px-4 py-2"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-white mb-1">
+              Kort om prosjektet
+            </label>
+            <textarea
+              rows="4"
+              className="w-full bg-[#1a1a1a] text-white border border-gray-700 rounded px-4 py-2 resize-none"
+            ></textarea>
+          </div>
 
-      <div>
-        <label htmlFor="message" className="block font-semibold mb-1">Message</label>
-        <textarea
-          id="message"
-          name="message"
-          placeholder="Your message"
-          value={formData.message}
-          onChange={handleChange}
-          className="w-full px-4 py-2 border rounded-md bg-white text-black"
-          rows={5}
-        ></textarea>
+          <button
+            type="submit"
+            className="bg-yellow-400 hover:bg-yellow-300 text-black font-semibold px-6 py-2 rounded transition"
+          >
+            Send melding
+          </button>
+        </form>
       </div>
-
-      <button
-        type="submit"
-        className="bg-blue-600 text-white font-semibold px-6 py-2 rounded-md hover:bg-blue-700 transition-all"
-      >
-        Send Message
-      </button>
-    </form>
+    </section>
   );
 }

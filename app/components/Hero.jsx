@@ -12,7 +12,7 @@ export default function Hero() {
       <h2 className="text-yellow font-semibold mb-2">
         Junior Frontend Developer
       </h2>
-      <p className="max-w-xl mx-auto text-sm leading-relaxed">
+      <p className="max-w-xl mx-auto text-xl font-bold leading-relaxed">
         I build beautiful, responsive websites with modern technologies and UX design.
         Passionate about creating seamless user experiences and clean code.
       </p>

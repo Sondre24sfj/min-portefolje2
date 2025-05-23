@@ -2,7 +2,7 @@
 
 :root {
   --primary: #030344;
-  --yellow: #F7DE00;
+  --yellow: #E9A304;
   --white: #ffffff;
   --contact-bg: #1F2567;
 }
@@ -74,4 +74,10 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
   background-color: #000;
+}
+
+/*Project-card*/
+.project-card:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
 }

@@ -10,7 +10,7 @@ export default function Header() {
       <div className="text-yellow font-bold text-lg">DevPortfolio</div>
 
       {/* Desktop nav */}
-      <nav className="hidden md:flex space-x-6 text-sm">
+      <nav className="text-yellow hidden md:flex space-x-6 text-sm">
         <a href="#about" className="hover:text-yellow">About</a>
         <a href="#skills" className="hover:text-yellow">Skills</a>
         <a href="#projects" className="hover:text-yellow">Projects</a>

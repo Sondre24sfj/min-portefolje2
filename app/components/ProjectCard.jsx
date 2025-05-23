@@ -1,18 +1,23 @@
-export default function ProjectCard({ title, description, link, image, logo }) {
+export default function ProjectCard({ title, description, link, logo }) {
   return (
-    <div className="bg-primary text-white rounded-xl shadow-lg p-6 w-72 mx-auto">
-      <div className="flex items-center gap-2 mb-3">
-        <img src={image} alt="logo" className="h-10 w-10 rounded-full object-cover" />
-        <span className="font-bold">{title}</span>
+    <div className="bg-yellow-400 text-[#030344] rounded-xl shadow-xl p-6 w-96 mx-auto transition-transform hover:scale-105 duration-300">
+      <div className="flex items-center gap-4 mb-4">
+        <img
+          src={logo}
+          alt={`${title} logo`}
+          className="h-12 object-contain"
+        />
+        <span className="text-xl font-bold">{title}</span>
       </div>
-      <p className="text-sm mb-4">{description}</p>
-      <a href={link} target="_blank" rel="noopener noreferrer" className="text-red-500 underline text-sm">
+      <p className="text-sm mb-6">{description}</p>
+      <a
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-red-500 underline text-sm"
+      >
         View Live
       </a>
-      <div className="mt-4">
-     
-      </div>
     </div>
   );
 }
-
