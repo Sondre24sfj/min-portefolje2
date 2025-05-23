@@ -79,7 +79,7 @@ export default function ContactForm() {
                   type="text"
                   name="name"
                   required
-                  className="w-full bg-[#1a1a1a] text-white border border-gray-700 rounded px-4 py-2"
+                  className="w-full bg-[#ffffff] text-white border border-gray-700 rounded px-4 py-2"
                   placeholder="Skriv inn navnet ditt"
                 />
               </div>
@@ -93,23 +93,11 @@ export default function ContactForm() {
                   type="email"
                   name="email"
                   required
-                  className="w-full bg-[#1a1a1a] text-white border border-gray-700 rounded px-4 py-2"
+                  className="w-full bg-[#ffffff] text-white border border-gray-700 rounded px-4 py-2"
                   placeholder="din@email.com"
                 />
               </div>
 
-              {/* Telefonnummer */}
-              <div>
-                <label className="block text-sm font-medium text-white mb-1">
-                  Telefonnummer
-                </label>
-                <input
-                  type="tel"
-                  name="phone"
-                  className="w-full bg-[#1a1a1a] text-white border border-gray-700 rounded px-4 py-2"
-                  placeholder="12345678"
-                />
-              </div>
 
               {/* Prosjektbeskrivelse */}
               <div>
@@ -119,18 +107,10 @@ export default function ContactForm() {
                 <textarea
                   name="message"
                   rows="4"
-                  className="w-full bg-[#1a1a1a] text-white border border-gray-700 rounded px-4 py-2 resize-none"
+                   className="w-full bg-[#ffffff] text-white placeholder-white border border-gray-700 rounded px-4 py-2 resize-none"
                   placeholder="Fortell oss litt om prosjektet ditt..."
                 ></textarea>
               </div>
-
-              <p className="text-xs text-gray-400">
-                Informasjonen behandles i henhold til vår{' '}
-                <a href="#" className="underline text-gray-300">
-                  personvernerklæring
-                </a>
-                .
-              </p>
 
               <button
                 type="submit"

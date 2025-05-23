@@ -47,8 +47,8 @@ h1, h2, h3, h4, h5, h6 {
 /* Kontaktform styling */
 input, textarea {
   background-color: transparent;
-  border: 1px solid var(--contact-bg);
-  color: var(--contact-bg);
+  border: 1px solid white(--contact-bg);
+  color: white(--contact-bg); /*Skrift i feltene*/
   padding: 0.75rem;
   border-radius: 0.375rem;
   width: 100%;
@@ -60,7 +60,7 @@ textarea {
 }
 /*Kontakt-skjema*/
 input::placeholder, textarea::placeholder {
-  color: white(--contact-bg);
+  color: white(-contact-bg);
 }
 
 button[type="submit"] {
@@ -73,7 +73,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-  background-color: #000;
+  background-color: white;
 }
   
 /* Project card hover */
