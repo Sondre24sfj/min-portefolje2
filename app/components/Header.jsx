@@ -7,7 +7,9 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 w-full z-50 border-t-4 border-yellow bg-[#030344cc] backdrop-blur-sm text-white flex items-center justify-between px-6 py-3">
       {/* Logo */}
-      <div className="text-yellow font-bold text-lg">DevPortfolio</div>
+      <a href="#" className="text-yellow font-bold text-lg hover:underline">
+  DevPortfolio
+</a>
 
       {/* Desktop nav */}
       <nav className="text-yellow hidden md:flex space-x-6 text-sm">
