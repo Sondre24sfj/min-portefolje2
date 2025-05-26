@@ -106,3 +106,7 @@ button[type="submit"]:hover {
     display: none;
   }
 }
+
+html {
+  scroll-behavior: smooth;
+}
