@@ -8,7 +8,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <h4 className="font-semibold mb-3 text-yellow-400">Hurtiglenker</h4>
+          <h4 className="font-semibold mb-3 text-yellow-400">Quick links</h4>
           <ul className="space-y-2 text-sm">
             <li><a href="#about" className="hover:underline">About</a></li>
             <li><a href="#skills" className="hover:underline">Skills</a></li>
