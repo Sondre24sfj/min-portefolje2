@@ -38,12 +38,12 @@ export default function HomePage() {
   <div className="relative z-10 max-w-3xl px-6">
     <h2 className="text-yellow text-2xl font-extrabold mb-6">About me</h2>
     <p className="mb-4 text-xl font-bold leading-relaxed">
-      I am 33 years old, from Hof in Vestfold and currently living there. In my free time,
+      I am 34 years old, from Hof in Vestfold and currently living there. In my free time,
       I enjoy climbing, watching sports, outdoor activities, spending time with friends and family.
     </p>
     <p className="mb-4 text-xl font-bold leading-relaxed">
-      I have completed a course through Jobloop/Kodehodet consisting of 8 months of theory
-      and will now begin 4 months of practical training in a company.
+    I have completed a course through Jobloop/Kodehodet consisting of 7 months of theory
+    and now I am at Hetronic in practice.
     </p>
     <p className="text-xl font-bold leading-relaxed">
       During the course, I have worked with: HTML, CSS, JavaScript, Node, React, Next.js,
