@@ -1,6 +1,6 @@
 export default function LogoLoop() {
   const logos = [
-    'github.png', 'nextjs.png', 'autodesk.png', 'autocad.png', 'css.png',
+    'icon-github.png', 'nextjs.png', 'autodesk.png', 'autocad.png', 'css.png',
     'html.png', 'js.png', 'wordpress.png', 'vscode.png', 'react.png',
     'tailwind.png', 'node.png', 'figma.png', 'vite.png', 'postcss.png', 'C++.png', 'qt-2.png',
   ];
